@@ -1,4 +1,4 @@
-# 1.1
+# exercise 1.1
 
 #1.11
 is.na(attenu)
@@ -12,7 +12,7 @@ head(attenu_cleaned)
 dim(attenu_cleaned)
 
 
-# 1.2
+# exercise 1.2
 
 #1.21
 Theoph_2 = Theoph
@@ -30,7 +30,7 @@ print(head(Theoph_2))
 print(dim(Theoph_2))
 
 
-#1.3
+# exercise 1.3
 
 #1.31
 starbucks=read.csv("/Users/peterchong/Documents/qbio_data_analysis_peterc/week3_R/week3_homework/starbucks.csv")
@@ -75,7 +75,7 @@ plot( x = starbucks_cleaned$Carb, y = starbucks_cleaned$Calories,
      ylab="Calories", col=factor(starbucks_cleaned$is_highest_fat))
 
 
-#1.4
+# exercise 1.4
 
 #1.41
 baseball=read.csv("/Users/peterchong/Documents/qbio_data_analysis_peterc/week3_R/week3_homework/Batting.csv")
@@ -102,7 +102,7 @@ plot(x=atl_pit$yearID, y=atl_pit$HR,
      xlab="Year", ylab="# of Homeruns", col=factor(atl_pit$teamID))
 
 
-#1.5
+# exercise 1.5
 
 #1.51
 easy_plot=function(a,b,color_data){
@@ -126,33 +126,34 @@ easy_plot(starbucks_cleaned$Fat, starbucks_cleaned$Fiber, starbucks_cleaned$Sodi
 easy_plot(baseball$HR, baseball$G, baseball$SO)
 
 
-#2.1
+# exercise 2.1
 #The data set describes various quantitative measurements of several species of flowers' parts.
 library(datasets)
 data(iris)
 summary(iris)
 #It contains 150 observations of 5 variables.
 
-#2.2
+# exercise 2.2
 #Sepal length, sepal width, petal length, and petal width are all continuous variables. The species variable is categorical. The continuous variables are numeric, while the categorical is a string.
 
-#2.3
+# exercise 2.3
 hist(iris$Sepal.Length)
 hist(iris$Sepal.Width)
 hist(iris$Petal.Length)
 hist(iris$Petal.Width)
 #I noticed that the two sepal variables are similar in shape, while the petal variables are also similar in shape. The petal histograms have an odd hole near the left of the graph.
 
-#2.4
+# exercise 2.4
 med_sep_width=median(iris$Sepal.Width)
 iris_copy=iris
 sepal_comparison=ifelse(iris_copy$Sepal.Width>med_sep_width, "wide", "narrow")
 iris_copy$sep_comp=sepal_comparison
 boxplot(iris_copy$Sepal.Width~iris_copy$sep_comp, ylab="Sepal Width")
 
-#2.5
+# execise2.5
 #The black species looks most unique, while the red and green species seem to overlap some and are therefore somewhat similar.
 ?pairs
+args(pairs)
 pairs(iris_copy[,1:4], col=iris_copy[,5])
 
 
