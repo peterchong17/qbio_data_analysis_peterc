@@ -1,0 +1,365 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "42fdee26",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2.5 1.5\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = 4\n",
+    "y = 2\n",
+    "\n",
+    "# 1. y = y / x (example is filled in below)\n",
+    "y /= x\n",
+    "\n",
+    "# 2. y = y * 3\n",
+    "y *=3\n",
+    "\n",
+    "# 3. x = x - y\n",
+    "x -=y\n",
+    "\n",
+    "print(x,y)\n",
+    "\n",
+    "assert((x, y) == (2.5, 1.5))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "bf4118b2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[3, 4]\n",
+      "2\n",
+      "0\n"
+     ]
+    }
+   ],
+   "source": [
+    "first_list = [0, 1, 2, 3, 4, 5, 6]\n",
+    "print(first_list[3:5])\n",
+    "# [3, 4]\n",
+    "print(first_list[2])\n",
+    "# 2\n",
+    "print(first_list[0])\n",
+    "# 0"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "e54f2ad8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "first_list = [0, 1, 2, 3, 4, 5, 6]\n",
+    "short_list = first_list[2:5]\n",
+    "\n",
+    "assert(short_list == [2,3,4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "dd2b817b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "7\n"
+     ]
+    }
+   ],
+   "source": [
+    "first_list = [0, 1, 2, 3, 4, 5, 6]\n",
+    "# double the third value in first_list\n",
+    "first_list[2] *=2\n",
+    "\n",
+    "# print the length of first_list\n",
+    "print(len(first_list))\n",
+    "\n",
+    "assert(first_list == [0, 1, 4, 3, 4, 5, 6])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "2b271409",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[9, 8, 7]\n"
+     ]
+    }
+   ],
+   "source": [
+    "list_ex = []\n",
+    "list_ex.append(9)\n",
+    "list_ex.append(8)\n",
+    "list_ex.append(7)\n",
+    "print(list_ex)\n",
+    "\n",
+    "assert(list_ex == [9,8,7])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "f443c034",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "3.5\n"
+     ]
+    }
+   ],
+   "source": [
+    "nums = [1,2,3,4,5,6]\n",
+    "total = 0\n",
+    "\n",
+    "# you have two options here; either is ok\n",
+    "for i in nums:\n",
+    "    total += i\n",
+    "\n",
+    "mean_value = total / len(nums) # DO NOT fill in 6 (use a function instead)\n",
+    "print(mean_value)\n",
+    "\n",
+    "assert(mean_value == 3.5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "d23961e5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a_new_list = [1, 'fish', 2, 'fish']\n",
+    "num_list = [0,1,2,3,4,5,6]\n",
+    "\n",
+    "for x in a_new_list:\n",
+    "    num_list.append(x)\n",
+    "\n",
+    "assert(num_list == [0,1,2,3,4,5,6,1,'fish',2,'fish'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "40cc3979",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0, 1, 2, 3, 4, 5, 6, 1, 'fish', 2, 'fish']\n"
+     ]
+    }
+   ],
+   "source": [
+    "a_new_list = [1, 'fish', 2, 'fish']\n",
+    "num_list = [0,1,2,3,4,5,6]\n",
+    "\n",
+    "for x in range(len(a_new_list)):\n",
+    "    num_list.append(a_new_list[x])\n",
+    "print(num_list)\n",
+    "    \n",
+    "assert(num_list == [0,1,2,3,4,5,6,1,'fish',2,'fish'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "1ffa44a5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "string_list = [\"Apple\", \"Banana\", \"Alligator\", \"Anteater\", \"Potato\", \"Water\", \"Aardvark\"]\n",
+    "starts_A_list = []\n",
+    "for x in string_list:\n",
+    "    if x[0]==\"A\":\n",
+    "        starts_A_list.append(x)\n",
+    "\n",
+    "\n",
+    "assert(starts_A_list == [\"Apple\", \"Alligator\", \"Anteater\", \"Aardvark\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "a92f7d67",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "some_nums = [20, -3, 54, 4, -10, 23, 3, 33, 23]\n",
+    "total = 0 # what should total start out as?\n",
+    "i=0\n",
+    "\n",
+    "while total<100 :\n",
+    "    total += some_nums[i]\n",
+    "    i+=1\n",
+    "\n",
+    "assert(total == 124)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "23697532",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_nums = [5,4,3,2,1]\n",
+    "\n",
+    "def double_every_number(nums):\n",
+    "    results = []\n",
+    "    for x in nums:\n",
+    "        y =2*x\n",
+    "        results.append(y)\n",
+    "    return results\n",
+    "\n",
+    "assert(double_every_number(my_nums) == [10, 8, 6, 4, 2])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "4adaa845",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_nums = [1,4,2,5,3]\n",
+    "\n",
+    "def max(nums):\n",
+    "    h = nums[0]\n",
+    "    for x in nums:\n",
+    "        if x>h:\n",
+    "            h=x\n",
+    "    return h\n",
+    "    \n",
+    "assert(max(my_nums) == 5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "427bcca4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "a is apple, b is banana\n"
+     ]
+    }
+   ],
+   "source": [
+    "def print_args(a,b):\n",
+    "    print(f\"a is {a}, b is {b}\")\n",
+    "\n",
+    "print_args(\"apple\",\"banana\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "6ef79517",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Write the add_to_list function here\n",
+    "\n",
+    "def add_to_list(from_list, to_list):\n",
+    "    if len(from_list)==len(to_list):\n",
+    "        for i, obj in enumerate(from_list):\n",
+    "            to_list[i] += obj\n",
+    "    return to_list\n",
+    "\n",
+    "assert(add_to_list([0,1,2,3,4], [5,6,7,8,9]) == [5,7,9,11,13])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "5ea50ea8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "e1f4e305",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "nd_nums = np.array([5, -2, -1, 0, 6, 1])\n",
+    "\n",
+    "positive_mask = np.array(nd_nums>=0)\n",
+    "nd_nums_positive = nd_nums[positive_mask]\n",
+    "\n",
+    "assert(np.all(nd_nums_positive == [5, 0, 6, 1]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "cb39208e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "nd_nums_with_NAs = np.array([5, -2, np.nan])\n",
+    "bool_mask = np.isnan(nd_nums_with_NAs)\n",
+    "nd_nums_with_NAs = nd_nums_with_NAs[~bool_mask]\n",
+    "\n",
+    "assert(np.all(nd_nums_with_NAs == [5, -2]))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
